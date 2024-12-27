@@ -1,3 +1,17 @@
+/* 
+Blog Creator card
+*/
+.post-creation-card{
+    background-color:rgba(87, 133, 219);
+    border-radius: 2%;
+    justify-items: center;
+    align-content: center;
+    height: 100vh;
+    width: 80vw;
+    margin: 5%;
+    padding: 1%;
+}
+
 .blog-creator-main-div{
     justify-items: center;
 }
@@ -6,7 +20,10 @@
     margin: 1.125rem;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
     align-content: center;
 }
 
@@ -21,26 +38,45 @@
 .title-input{
     align-self: center;
     border: none;
-    border-bottom: 1px solid black;
+    background-color:rgb(117, 150, 211);
+    border: 2px solid #ccc;
     width: 25rem;
     height: 2rem;
     font-size: 1.750rem;
     font-weight: bold;
-    border-radius: 10%;
+    border-radius: 5%;
     text-align: center;
+}
+
+.title-input::placeholder{
+    color: white;
+    font-size: 20px;
+}
+
+.title-input:focus{
+    color: white;
 }
 
 .textarea-input{
     margin: 20px;
     box-sizing: border-box;
+    background-color:rgb(117, 150, 211);
     padding: 12px 20px;
     border: 2px solid #ccc;
     border-radius: 4px;
-    background-color: #f8f8f8;
-    height: 20rem;
+    height: 50%;
+    width: 75%;
     resize: none;
     font-size: 16px;
     font-family: sans-serif;
+}
+
+.textarea-input::placeholder{
+    color: white;
+}
+
+.textarea-input:focus{
+    color: white;
 }
 
 /* .file-input{
@@ -50,9 +86,36 @@
 } */
 
 .button-input{
-    padding: 20px;
-    width: 40%;
-    font-size: 1rem;
-    cursor: pointer;
+    background-color:rgb(117, 150, 211);
+    border: 2px solid white;
     align-self: center;
+    color: white;
+    margin: 40px;
+    height: 40px;
+    width: 200px;
+}
+
+.button-input:hover{
+    background-color:rgb(100, 127, 177);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px){
+    .title-input{
+        width: 40vw;
+        font-size: 16px;
+    }
+    .blog-creator-form{
+        justify-content: flex-start;
+    }
+    .textarea-input{
+        height: 60vh;
+    }
+
+}
+
+@media only screen and (max-height: 500px){
+    .textarea-input{
+        height: 20vh;
+    }
 }

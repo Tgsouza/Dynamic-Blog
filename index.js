@@ -79,14 +79,6 @@ app.get("/admin", (req, res)=>{
     }
 })
 
-//SIGN-OUT POST FUNCTION ON ADMIN PAGE
-app.post("/sign-out", (req, res) =>{
-    userNameLogin = "";
-    passwordLogin = "";
-    validLogin = false;
-    res.render("index.ejs")
-})
-
 // //MIDDLEWARE FOR POST CREATION ON ADMIN PAGE
 // function postCreation(req, res, next){
 //     postTitle = req.body.title;
@@ -109,6 +101,16 @@ app.post("/send-post", (req, res) =>{
     res.redirect("/posts?" + QueryString.stringify({
         posts: postsArray
     }))
+})
+
+//SIGN-OUT POST FUNCTION ON ADMIN PAGE
+app.post("/sign-out", (req, res) =>{
+    userNameLogin = "";
+    passwordLogin = "";
+    validLogin = false;
+    res.render("index.ejs", {
+        posts: postsArray
+    })
 })
 
 app.listen(port, ()=>{
